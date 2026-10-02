@@ -1,0 +1,9 @@
+# Storage and expiration
+
+The immutable organizer, highest accepted business event ID, and next reservation ID use instance storage. Each event uses one persistent storage record containing its public fields and a bounded attendee-to-reservation-ID map. This gives one atomic expiration and restoration boundary for the event, reservation count, and duplicate check. Capacity is capped at 128 to keep that record bounded.
+
+Every successful write extends the instance and affected event record to at least 500,000 ledgers when their remaining TTL falls below 100,000. `refresh_event(event_id)` can be called by anyone on a live record to renew both. Reads do not renew TTL because read-only simulations do not submit a ledger write. Operators should schedule refresh transactions and monitor TTL; extensions are subject to network maximums and fees.
+
+If an event record is archived, current protocol 23+ hosts can automatically restore it when the transaction footprint includes the entry, which incurs restoration costs. SDK 28 tests emulate this behavior. If restoration is unavailable or fails, restore the archived entry with the Stellar CLI or RPC before retrying; do not treat it as a new event. The instance high-water mark rejects its ID on `create_event` even when the event record is archived. Because all attendee IDs and the reservation count live in the same record, an attendee record cannot expire independently and silently admit a duplicate or overbook capacity. If the instance itself is archived, restore the contract instance and code before invoking it; the high-water mark and reservation counter must not be reset. Do not redeploy a new instance as a substitute for restoring old state.
+
+A testnet reset destroys the old deployment. Redeploy, regenerate the manifest, and configure the backend to the new contract ID. A fresh deployment starts new business and reservation ID spaces.

@@ -1,0 +1,18 @@
+[package]
+name = "soropulse-ticket-reservation"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.97.1"
+license = "MIT"
+publish = false
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+soroban-sdk = { workspace = true }
+
+[dev-dependencies]
+soroban-sdk = { workspace = true, features = ["testutils"] }
+hex = "=0.4.3"
+serde_json = "=1.0.151"

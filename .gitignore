@@ -1,7 +1,7 @@
-target/
-.contract-ids/
-**/*.wasm
-.DS_Store
-test_snapshots/
-frontend/node_modules/
-node_modules/
+/target/
+/test_snapshots/
+/.stellar/
+/deployments/
+*.env
+
+**/test_snapshots/
