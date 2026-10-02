@@ -3,19 +3,75 @@
   "title": "Verified SoroPulse testnet deployment",
   "type": "object",
   "additionalProperties": false,
-  "required": ["network", "network_passphrase", "contract_id", "wasm_sha256", "source_commit", "deployment_transaction_hash", "deployed_at_utc", "stellar_cli_version", "soroban_sdk_version", "event_schema_version", "build_command"],
+  "required": [
+    "network",
+    "network_passphrase",
+    "contract_id",
+    "wasm_sha256",
+    "source_commit",
+    "deployment_transaction_hash",
+    "deployed_at_utc",
+    "stellar_cli_version",
+    "soroban_sdk_version",
+    "event_schema_version",
+    "build_command"
+  ],
   "properties": {
-    "network": {"const": "testnet"},
-    "network_passphrase": {"const": "Test SDF Network ; September 2015"},
-    "contract_id": {"type": "string", "pattern": "^C[A-Z2-7]{55}$"},
-    "wasm_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
-    "source_commit": {"type": "string", "pattern": "^[a-f0-9]{40}$"},
-    "deployment_transaction_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
-    "deployed_at_utc": {"type": "string", "format": "date-time"},
-    "stellar_cli_version": {"type": "string"},
-    "soroban_sdk_version": {"const": "28.0.0"},
-    "event_schema_version": {"const": 1},
-    "build_command": {"type": "string"},
-    "wasm_upload_transaction_hash": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+    "network": {
+      "const": "testnet"
+    },
+    "network_passphrase": {
+      "const": "Test SDF Network ; September 2015"
+    },
+    "contract_id": {
+      "type": "string",
+      "pattern": "^C[A-Z2-7]{55}$"
+    },
+    "wasm_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "source_commit": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "deployment_transaction_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "deployed_at_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "stellar_cli_version": {
+      "type": "string"
+    },
+    "soroban_sdk_version": {
+      "const": "28.0.0"
+    },
+    "event_schema_version": {
+      "const": 1
+    },
+    "build_command": {
+      "type": "string"
+    },
+    "wasm_upload_transaction_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "demo_reservation_transaction_hash": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "demo_blockchain_event_id": {
+      "type": "string"
+    },
+    "demo_business_event_id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "rust_version": {
+      "type": "string"
+    }
   }
 }

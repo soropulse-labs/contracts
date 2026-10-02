@@ -1,7 +1,4 @@
 /target/
-/test_snapshots/
-/.stellar/
-/deployments/
-*.env
-
 **/test_snapshots/
+/.stellar/
+*.env

@@ -1,0 +1,18 @@
+{
+  "network": "testnet",
+  "network_passphrase": "Test SDF Network ; September 2015",
+  "contract_id": "CAUKWP7TRYYXAF2C5NDAZEAQVWCUMXX76KBPK64MQBZHU7EUJ5JVPHGG",
+  "wasm_sha256": "aabcfdfcf1f112f1a9dac5e61745b91b6b9fd67bbe828ababb137936e5154d1d",
+  "source_commit": "b478355c44722db0ddef5c31ec14324f013d939c",
+  "deployment_transaction_hash": "bf56552c2ce9ec0268442ee85b166a967daf5fa517e9719e663893e6965d5b65",
+  "wasm_upload_transaction_hash": "2ea193ece065b3b8cf6fc9cb6e7a78fe455097f2123a8409a0a7a988613a531e",
+  "deployed_at_utc": "2026-10-02T21:09:47Z",
+  "stellar_cli_version": "27.1.0",
+  "soroban_sdk_version": "28.0.0",
+  "rust_version": "1.97.1",
+  "event_schema_version": 1,
+  "build_command": "stellar contract build --package soropulse-ticket-reservation --locked --optimize=false",
+  "demo_reservation_transaction_hash": "8f4e8a01ac17e8b9905f291b729ee79dca60a2969812c1c6c7056e7b5d1a0227",
+  "demo_blockchain_event_id": "0021433518894649344-0000000000",
+  "demo_business_event_id": 7
+}
